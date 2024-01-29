@@ -1,3 +1,3 @@
 # About
 
-Repository that contains [https://matthiasweiss.at/](https://matthiasweiss.at/).
+Source code of my personal website [https://matthiasweiss.at/](https://matthiasweiss.at/)

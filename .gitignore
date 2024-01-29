@@ -1,4 +1,4 @@
 .vscode
 node_modules
 .DS_Store
-src/output.css
+css/output.css

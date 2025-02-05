@@ -55,12 +55,12 @@ const navigationLinks = [
   </head>
 
   <body
-    class="flex min-h-screen min-w-screen flex-col items-center bg-zinc-200 font-light text-zinc-800 dark:bg-zinc-800 dark:text-zinc-300">
-    <header class="flex w-full max-w-3xl items-center justify-between p-8">
-      <div class="flex flex-col gap-4">
-        <h1 class="font-medium">Matthias Weiß</h1>
+    class="flex min-h-screen min-w-screen flex-col items-center gap-12 bg-zinc-100 font-light text-zinc-800 dark:bg-zinc-800 dark:text-zinc-300">
+    <header class="flex w-full max-w-3xl justify-between px-8 pt-16">
+      <nav class="flex w-full justify-between gap-4">
+        <a href="/"><h2 class="font-medium">Matthias Weiß</h2></a>
 
-        <p class="flex flex-col leading-7 font-light">
+        <p class="flex gap-4">
           {
             navigationLinks.map(({ url, label }) => {
               return (
@@ -71,16 +71,10 @@ const navigationLinks = [
             })
           }
         </p>
-      </div>
-
-      <img
-        src="/images/portrait.jpg"
-        alt="Portrait of myself"
-        class="size-32 rounded-full shadow-md md:size-40"
-      />
+      </nav>
     </header>
 
-    <main class="w-full max-w-3xl grow p-8">
+    <main class="w-full max-w-3xl grow p-8 pt-0">
       <slot />
     </main>
   </body>

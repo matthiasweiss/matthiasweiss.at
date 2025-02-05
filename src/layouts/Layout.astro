@@ -1,0 +1,88 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const year = new Date().getFullYear();
+
+const navigationLinks = [
+  { url: '/', label: 'Home' },
+  { url: '/work', label: 'Work' },
+  { url: '/blog', label: 'Blog' },
+] as const;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Title"
+      href={new URL('rss.xml', Astro.site)}
+    />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+  </head>
+
+  <body
+    class="flex min-h-screen min-w-screen flex-col items-center bg-zinc-200 font-light text-zinc-800 dark:bg-zinc-800 dark:text-zinc-300">
+    <header class="flex w-full max-w-3xl items-center justify-between p-8">
+      <div class="flex flex-col gap-4">
+        <h1 class="font-medium">Matthias Weiß</h1>
+
+        <p class="flex flex-col leading-7 font-light">
+          {
+            navigationLinks.map(({ url, label }) => {
+              return (
+                <a href={url} class="">
+                  {label}
+                </a>
+              );
+            })
+          }
+        </p>
+      </div>
+
+      <img
+        src="/images/portrait.jpg"
+        alt="Portrait of myself"
+        class="size-32 rounded-full shadow-md md:size-40"
+      />
+    </header>
+
+    <main class="w-full max-w-3xl grow p-8">
+      <slot />
+    </main>
+  </body>
+</html>

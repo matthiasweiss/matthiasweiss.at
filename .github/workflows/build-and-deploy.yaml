@@ -17,10 +17,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build -- --minify
-
-      - name: Copy files
-        run: mkdir -p dist/css && cp index.html dist && cp css/output.css dist/css
+        run: npm run build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4

@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -11,9 +11,9 @@ const { title, description } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const navigationLinks = [
-  { url: '/', label: 'Home' },
-  { url: '/work', label: 'Work' },
-  { url: '/blog', label: 'Blog' },
+  { url: "/", label: "Home" },
+  { url: "/work", label: "Work" },
+  { url: "/blog", label: "Blog" },
 ] as const;
 ---
 
@@ -29,7 +29,7 @@ const navigationLinks = [
       rel="alternate"
       type="application/rss+xml"
       title="Title"
-      href={new URL('rss.xml', Astro.site)}
+      href={new URL("rss.xml", Astro.site)}
     />
     <meta name="generator" content={Astro.generator} />
 
@@ -55,7 +55,8 @@ const navigationLinks = [
   </head>
 
   <body
-    class="flex min-h-screen min-w-screen flex-col items-center gap-12 bg-zinc-100 font-light text-zinc-800 dark:bg-zinc-800 dark:text-zinc-300">
+    class="flex min-h-screen min-w-screen flex-col items-center gap-12 bg-zinc-100 font-light text-zinc-800 dark:bg-zinc-800 dark:text-zinc-300"
+  >
     <header class="flex w-full max-w-3xl justify-between px-8 pt-16">
       <nav class="flex w-full justify-between gap-4">
         <a href="/"><h2 class="font-medium">Matthias Weiß</h2></a>

@@ -1,12 +1,7 @@
-name: Build and Deploy
+name: Check PR
 
 on:
-  push:
-    branches:
-      - main
-
-permissions:
-  contents: write
+  pull_request:
 
 jobs:
   build-and-deploy:
@@ -24,8 +19,3 @@ jobs:
 
       - name: Build
         run: npm run build
-
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist

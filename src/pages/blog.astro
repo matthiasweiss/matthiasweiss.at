@@ -1,15 +1,16 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
 
-const recentPosts = (await getCollection('blog')).sort(
-  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()
+const recentPosts = (await getCollection("blog")).sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
 );
 ---
 
 <Layout
   title="Blog - Matthias Weiß"
-  description="Read my thoughts on software engineering, web development, and whatever else comes to my mind.">
+  description="Read my thoughts on software engineering, web development, and whatever else comes to my mind."
+>
   <section>
     <ul>
       {

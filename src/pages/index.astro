@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import PortraitImage from "../assets/portrait.jpg";
 ---
 
 <Layout
@@ -7,8 +9,9 @@ import Layout from "../layouts/Layout.astro";
   description="Full stack developer from Vienna, Austria."
 >
   <h1>Hello</h1>
-  <img
-    src="/images/portrait.jpg"
+
+  <Image
+    src={PortraitImage}
     alt="Portrait of Matthias Weiß"
     class="size-32 rounded-full shadow-md md:size-48"
   />

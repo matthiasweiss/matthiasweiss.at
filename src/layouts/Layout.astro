@@ -12,9 +12,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const navigationLinks = [
   { url: "/", label: "Home" },
-  { url: "/work", label: "Work" },
+  { url: "/projects", label: "Projects" },
   { url: "/blog", label: "Blog" },
 ] as const;
+
+const pathname = new URL(Astro.request.url).pathname;
 ---
 
 <!doctype html>
@@ -55,27 +57,27 @@ const navigationLinks = [
   </head>
 
   <body
-    class="flex min-h-screen min-w-screen flex-col items-center gap-12 bg-zinc-100 font-light text-zinc-800 dark:bg-zinc-800 dark:text-zinc-300"
+    class="flex min-h-screen min-w-screen flex-col items-center gap-12 bg-zinc-50 font-light text-zinc-800 dark:bg-zinc-800 dark:text-zinc-300"
   >
-    <header class="flex w-full max-w-3xl justify-between px-8 pt-16">
-      <nav class="flex w-full gap-12">
-        <a href="/"><h2 class="font-medium">Matthias Weiß</h2></a>
+    <header class="flex w-full max-w-2xl justify-between px-8 pt-16">
+      <nav class="flex w-full gap-4">
+        {
+          navigationLinks.map(({ url, label }) => {
+            const isActive =
+              (url === "/" && pathname === "/") ||
+              (url !== "/" && pathname.startsWith(url));
 
-        <p class="flex gap-4">
-          {
-            navigationLinks.map(({ url, label }) => {
-              return (
-                <a href={url} class="">
-                  {label}
-                </a>
-              );
-            })
-          }
-        </p>
+            return (
+              <a href={url} class={isActive ? "font-semibold" : ""}>
+                {label}
+              </a>
+            );
+          })
+        }
       </nav>
     </header>
 
-    <main class="w-full max-w-3xl grow p-8 pt-0">
+    <main class="w-full max-w-2xl grow p-8 pt-0">
       <slot />
     </main>
   </body>

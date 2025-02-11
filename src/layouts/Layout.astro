@@ -68,7 +68,10 @@ const pathname = new URL(Astro.request.url).pathname;
               (url !== "/" && pathname.startsWith(url));
 
             return (
-              <a href={url} class={isActive ? "font-semibold" : ""}>
+              <a
+                href={url}
+                class={isActive ? "" : "text-zinc-400 dark:text-zinc-500"}
+              >
                 {label}
               </a>
             );

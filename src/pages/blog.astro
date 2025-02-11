@@ -12,22 +12,21 @@ const recentPosts = (await getCollection("blog")).sort(
   description="Read my thoughts on software engineering, web development, and whatever else comes to my mind."
 >
   <section class="space-y-8">
-    <div class="space-y-2">
-      <h1 class="font-semibold">Blog</h1>
+    <h1 class="text-2xl">Blog</h1>
 
-      <h2>
-        While relaunching this website in early 2025, I decided to include a
-        section for future blog posts. Let's see how this goes. 📝
-      </h2>
-    </div>
+    <h2>
+      While relaunching this website in early 2025, I decided to include a
+      section for future blog posts. Let's see how this goes. 📝
+    </h2>
 
-    <ul class="flex flex-col gap-8">
+    <ul class="space-y-8">
       {
         recentPosts.map((post) => (
-          <li class="flex flex-col gap-2">
+          <li>
             <a href={`/blog/${post.id}/`}>
-              <h3 class="">{post.data.title}</h3>
+              <h3>{post.data.title}</h3>
             </a>
+
             <h4 class="text-zinc-400 dark:text-zinc-500">
               {post.data.description}
             </h4>

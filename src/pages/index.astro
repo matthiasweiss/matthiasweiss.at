@@ -1,7 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import PortraitImage from "../assets/portrait.jpg";
 ---
 
 <Layout
@@ -12,20 +10,30 @@ import PortraitImage from "../assets/portrait.jpg";
     <h1 class="text-2xl">Hi, I'm Matthias 👋</h1>
 
     <p class="prose dark:prose-invert">
-      I'm a full stack developer from Vienna, Austria. I especially like the
-      full stack aspect, since I really enjoy building applications across the
-      entire stack. Whether it's frontend, backend, or infrastructure, I enjoy
-      all of it. I've worked with various programming languages and frameworks
-      over the years, but the one I always come back to is Laravel. Even though
-      I'd prefer to work in a more type-safe language, I haven't found any
-      stacks where I'm remotely as productive as I am in Laravel. I listed some
-      of my recent projects <a href="/projects">here</a>.
+      I'm a software engineer from Vienna, Austria. I really enjoy building full
+      stack web applications. Whether it's frontend, backend, or infrastructure,
+      I enjoy all of it. I've worked with various programming languages and
+      frameworks over the years, but the one I always come back to is Laravel.
+      Even though I'd prefer to work in a more type-safe language, I haven't
+      found any stacks where I'm remotely as productive as I am in Laravel. Take
+      a look at some of my recent projects <a href="/projects">here</a> or on
+      <a href="https://github.com/matthiasweiss" target="_blank">GitHub</a> 👨‍💻
     </p>
 
-    <Image
-      src={PortraitImage}
-      alt="Portrait of Matthias Weiß"
-      class="size-32 rounded-full shadow-md md:size-48"
-    />
+    <p class="prose dark:prose-invert">
+      I built this website that you're currently looking at in early 2025. On
+      one hand I wanted to give the site a more modern look, and on the other, I
+      wanted to get into blogging. My goal is to share things that I learn and
+      think are worth sharing with others, all in a digestible format. If you're
+      interested, you can check out my posts <a href="/projects">here</a>. ✏️
+    </p>
+
+    <p class="prose dark:prose-invert">
+      While I'm not very active on social media, you can also find me on <a
+        href="https://x.com/maziweiss">Twitter</a
+      > or <a href="https://bsky.app/profile/matthiasweiss.at" target="_blank"
+        >Bluesky</a
+      >. #️⃣
+    </p>
   </section>
 </Layout>

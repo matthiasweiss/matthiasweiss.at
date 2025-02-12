@@ -1,1 +1,6 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+a {
+  @apply hover:underline;
+}

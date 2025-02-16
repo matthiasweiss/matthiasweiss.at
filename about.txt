@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Martian Mono
+- Font Author: undefined
+- Font Source: https://fonts.gstatic.com/s/martianmono/v3/2V08KIcADoYhV6w87xrTKjs4CYElh_VS9YA4TlTnQzaVMIE6j15dYY1qu86WD75kdpF2.ttf
+- Font License: undefined)

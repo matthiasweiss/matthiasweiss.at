@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { PATHS } from "../utils";
 
 interface Props {
   title: string;
@@ -11,9 +12,9 @@ const { title, description } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const navigationLinks = [
-  { url: "/", label: "Home" },
-  { url: "/projects", label: "Projects" },
-  { url: "/blog", label: "Blog" },
+  { url: PATHS.ROOT, label: "Home" },
+  { url: PATHS.WORK, label: "Work" },
+  { url: PATHS.BLOG, label: "Blog" },
 ] as const;
 
 const pathname = new URL(Astro.request.url).pathname;
@@ -57,10 +58,10 @@ const pathname = new URL(Astro.request.url).pathname;
   </head>
 
   <body
-    class="flex min-h-screen min-w-screen flex-col items-center bg-zinc-50 font-light text-zinc-800 dark:bg-zinc-800 dark:text-zinc-300"
+    class="flex min-h-screen min-w-screen flex-col items-center bg-zinc-100 font-light text-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"
   >
     <header
-      class="sticky top-0 flex w-full max-w-2xl justify-between bg-zinc-50 px-4 py-8 pb-8 md:relative md:px-8 md:pt-16 dark:bg-zinc-800"
+      class="sticky top-0 flex w-full max-w-2xl justify-between bg-zinc-100 px-4 py-8 pb-8 md:relative md:px-8 md:pt-16 dark:bg-zinc-900"
     >
       <nav class="flex w-full gap-4">
         {

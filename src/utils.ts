@@ -12,3 +12,9 @@ export function formatDate(date: Date): string {
 
   return `${day}.${month}.${year}`;
 }
+
+export const PATHS = {
+  ROOT: "/",
+  WORK: "/work",
+  BLOG: "/blog",
+} as const;

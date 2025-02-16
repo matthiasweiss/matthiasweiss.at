@@ -12,4 +12,13 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  markdown: {
+    shikiConfig: {
+      themes: {
+        dark: "one-dark-pro",
+        light: "one-light",
+      },
+      wrap: true,
+    },
+  },
 });

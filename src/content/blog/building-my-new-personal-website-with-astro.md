@@ -1,5 +1,6 @@
 ---
 title: "Building my new personal website with Astro"
+description: "In this blog post, I share how I built my new personal website with Astro. I explain why I chose Astro, what I liked about it, and how I customized it to suit my needs, which even included a blog."
 publishedAt: "February, 16 2025"
 ---
 
@@ -36,7 +37,7 @@ which adds some default styles to vanilla HTML, a perfect fit for styling my pos
 Since I mainly want to write about web development, having good-looking code blocks was important to me.
 Astro uses the popular [Shiki syntax highlighter](https://shiki.style/), so tons of predefined themes can be used.
 It's also possible to change the theme based on whether the user uses dark or light mode, with just a few lines of code.
-You can check out the [Astro docs](https://docs.astro.build/en/guides/syntax-highlighting/#setting-light-and-dark-mode-themes) for more info.
+You can check out the [Astro docs](https://docs.astro.build/en/guides/syntax-highlighting/#setting-light-and-dark-mode-themes) for more information.
 
 Of course, I use my favorite theme, OneDark (and its light mode equivalent). To showcase this, I've added a code snippet:
 

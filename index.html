@@ -1,119 +1,25 @@
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>matthiasweiss.at</title>
-    <link rel="stylesheet" href="css/output.css" />
-  </head>
-  <body
-    class="flex h-screen w-screen flex-col items-center font-extralight text-slate-800"
-  >
-    <header class="flex w-full justify-center bg-slate-50 py-8">
-      <div class="flex w-full max-w-screen-lg flex-col px-8">
-        <h1 class="text-3xl text-slate-600">
-          <a href="/" class="">matthiasweiss.at</a>
-        </h1>
-        <h2 class="text-slate-400">
-          Software Engineer, <span class="age"></span>
-        </h2>
-      </div>
-    </header>
-
-    <main class="flex w-full flex-1 justify-center py-12">
-      <div class="flex w-full max-w-screen-lg flex-col gap-4 px-8">
-        <h1 class="text-4xl">About me</h1>
-        <article class="font-light">
-          My name is Matthias Weiß and I am <span class="age"></span> year old
-          software engineer from Vienna, Austria. <br />
-          Feel free to check out my
-          <a
-            target="_blank"
-            href="https://github.com/matthiasweiss"
-            class="hover:underline"
-            >GitHub</a
-          >
-          or
-          <a
-            target="_blank"
-            href="https://twitter.com/maziweiss"
-            class="hover:underline"
-            >Twitter</a
-          >.<br />
-        </article>
-      </div>
-    </main>
-
-    <footer class="flex w-full justify-center bg-slate-50 py-4 text-slate-400">
-      <div
-        class="flex w-full max-w-screen-lg items-center justify-between px-8"
-      >
-        <a
-          href="https://github.com/matthiasweiss"
-          target="_blank"
-          class="flex items-center gap-2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-github"
-          >
-            <path
-              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
-            />
-            <path d="M9 18c-4.51 2-5-2-7-2" />
-          </svg>
-          <span class="hidden lg:flex">GitHub</span>
-        </a>
-
-        <a
-          href="https://twitter.com/maziweiss"
-          target="_blank"
-          class="flex items-center gap-2"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-twitter"
-          >
-            <path
-              d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"
-            />
-          </svg>
-          <span class="hidden lg:flex">Twitter</span>
-        </a>
-      </div>
-    </footer>
-
-    <script>
-      // Let's just hope this is actually correct
-      // https://stackoverflow.com/questions/4060004/calculate-age-given-the-birth-date-in-the-format-yyyymmdd
-      const startOfUnixTimeYear = 1970;
-      const today = new Date();
-      const myBirthday = new Date("February 21, 1997 00:00:00").getTime();
-
-      const myCurrentAgeInYears = Math.abs(
-        new Date(today - myBirthday).getUTCFullYear() - startOfUnixTimeYear,
-      );
-
-      const ageElements = document.querySelectorAll(".age");
-
-      ageElements.forEach((element) => {
-        element.textContent = myCurrentAgeInYears;
-      });
-    </script>
-  </body>
-</html>
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Title" href="https://matthiasweiss.at/rss.xml"><meta name="generator" content="Astro v5.2.5"><!-- Canonical URL --><link rel="canonical" href="https://matthiasweiss.at/"><!-- Primary Meta Tags --><title>Matthias Weiß</title><meta name="title" content="Matthias Weiß"><meta name="description" content="Full stack developer from Vienna, Austria."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://matthiasweiss.at/"><meta property="og:title" content="Matthias Weiß"><meta property="og:description" content="Full stack developer from Vienna, Austria."><!-- Twitter --><meta property="twitter:card" content="summary"><meta property="twitter:url" content="https://matthiasweiss.at/"><meta property="twitter:title" content="Matthias Weiß"><meta property="twitter:description" content="Full stack developer from Vienna, Austria."><link rel="stylesheet" href="/_astro/blog.BwuVst6W.css"></head> <body class="flex min-h-screen min-w-screen flex-col items-center bg-zinc-100 font-light text-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"> <header class="sticky top-0 flex w-full max-w-2xl justify-between bg-zinc-100 px-4 py-8 pb-8 md:relative md:px-8 md:pt-16 dark:bg-zinc-900"> <nav class="flex w-full gap-4"> <a href="/" class> Home </a><a href="/work" class="text-zinc-400 dark:text-zinc-500"> Work </a><a href="/blog" class="text-zinc-400 dark:text-zinc-500"> Blog </a> </nav> </header> <main class="flex w-full max-w-2xl grow flex-col gap-8 p-4 pt-0 md:p-8 md:pt-0">  <section class="space-y-8"> <h1 class="text-2xl">Hey there, I'm Matthias 👋</h1> <div class="grid grid-cols-2 gap-4 md:gap-8"> <img src="/_astro/bali.BeUzzoHx_1vu59B.webp" alt="Picture of Matthias Weiß on a scooter" width="3024" height="3024" loading="lazy" decoding="async" class="rounded"> <img src="/_astro/portrait.DiC_bpC8_2fpgjA.webp" alt="Picture of Matthias Weiß on a mountain" width="2641" height="2641" loading="lazy" decoding="async" class="rounded"> </div> <p class="prose dark:prose-invert">
+I'm a software engineer from Vienna, Austria. As a full stack engineer, I
+      like all aspects of building web applications. Whether it's frontend,
+      backend, or infrastructure, I enjoy all parts of the process. I've worked
+      with various programming languages and frameworks over the years, but the
+      one I always come back to is Laravel. Even though I'd prefer to work in a
+      more type-safe language than PHP, I haven't found any stacks where I'm
+      remotely as productive as I am in Laravel. Take a look at some of my
+      recent work <a href="/work">here</a> or on
+<a href="https://github.com/matthiasweiss" target="_blank">GitHub</a>. 👨‍💻
+</p> <p class="prose dark:prose-invert">
+One of these projects is this website. I revamped it in early 2025 to give
+      it a more modern look, and also to use it as an excuse to get into
+      blogging. My goal is to share things that I learn and think are worth
+      sharing with others, all in a digestible format. If you're interested, you
+      can check out my posts <a href="/blog">here</a>. ✏️
+</p> <p class="prose dark:prose-invert">
+While I don't regularly post on social media, feel free to reach out to me
+      on
+<a href="https://bsky.app/profile/matthiasweiss.at" target="_blank">
+Bluesky
+</a>
+or
+<a href="https://x.com/maziweiss" target="_blank"> Twitter</a>. #️⃣
+</p> </section>  </main> </body></html>

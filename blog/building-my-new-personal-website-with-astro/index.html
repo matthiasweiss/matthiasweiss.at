@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Title" href="https://matthiasweiss.at/rss.xml"><meta name="generator" content="Astro v5.2.5"><!-- Canonical URL --><link rel="canonical" href="https://matthiasweiss.at/blog/building-my-new-personal-website-with-astro/"><!-- Primary Meta Tags --><title>Building my new personal website with Astro</title><meta name="title" content="Building my new personal website with Astro"><meta name="description" content="In this blog post, I share how I built my new personal website with Astro. I explain why I chose Astro, what I liked about it, and how I customized it to suit my needs, which even included a blog."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://matthiasweiss.at/blog/building-my-new-personal-website-with-astro/"><meta property="og:title" content="Building my new personal website with Astro"><meta property="og:description" content="In this blog post, I share how I built my new personal website with Astro. I explain why I chose Astro, what I liked about it, and how I customized it to suit my needs, which even included a blog."><!-- Twitter --><meta property="twitter:card" content="summary"><meta property="twitter:url" content="https://matthiasweiss.at/blog/building-my-new-personal-website-with-astro/"><meta property="twitter:title" content="Building my new personal website with Astro"><meta property="twitter:description" content="In this blog post, I share how I built my new personal website with Astro. I explain why I chose Astro, what I liked about it, and how I customized it to suit my needs, which even included a blog."><link rel="stylesheet" href="/_astro/blog.BwuVst6W.css"></head> <body class="flex min-h-screen min-w-screen flex-col items-center bg-zinc-100 font-light text-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"> <header class="sticky top-0 flex w-full max-w-2xl justify-between bg-zinc-100 px-4 py-8 pb-8 md:relative md:px-8 md:pt-16 dark:bg-zinc-900"> <nav class="flex w-full gap-4"> <a href="/" class="text-zinc-400 dark:text-zinc-500"> Home </a><a href="/work" class="text-zinc-400 dark:text-zinc-500"> Work </a><a href="/blog" class> Blog </a> </nav> </header> <main class="flex w-full max-w-2xl grow flex-col gap-8 p-4 pt-0 md:p-8 md:pt-0">  <section class="flex flex-col gap-8"> <div> <h1 class="text-2xl">Building my new personal website with Astro</h1> <h2 class="text-zinc-400 dark:text-zinc-500">
+Published on 16.02.2025 </h2> </div> <article class="prose dark:prose-invert [&_img]:m-0 [&_img]:rounded"> <p>In early 2025, I decided to revamp my personal website. Yes, the one you are looking at right now!
+Before, the design and content were extremely sparse, as you can see in the screenshot below
+(sorry to everyone using dark mode).</p>
+<p><img alt="Screenshot of my old website design" width="2840" height="1760" loading="lazy" decoding="async" src="/_astro/01_old_website_screenshot.D28LmvIq_Z105isc.webp" ></p>
+<p>After a little bit of brainstorming, I came up with two requirements for the updated site:</p>
+<ul>
+<li><strong>Static Site Generation (SSG)</strong>: Since the website is deployed via GitHub Actions to GitHub Pages (which is awesome for static pages),
+I need to be able to generate a static version of the website.</li>
+<li><strong>Markdown Content</strong>: I’ve enjoyed writing in Markdown for years now, and I think it’s well suited for writing blog articles.</li>
+</ul>
+<p>Since I’ve heard and read a lot of nice things about Astro, and it seemed like a perfect fit for my requirements, I chose it as the framework of choice.</p>
+<p><img alt="Screen recording of the installation flow of Astro" width="800" height="368" loading="lazy" decoding="async" src="/_astro/01_astro-installation.DMHznY03_1mHWVo.webp" ></p>
+<p>I was really impressed by the DX of setting up a new Astro project. The installation wizard is awesome in itself,
+but after creating the project with the “use blog template” flag, I was basically set up with a working blog.</p>
+<p><img alt="Screenshot of the working blog after the installation" width="2263" height="1238" loading="lazy" decoding="async" src="/_astro/01_astro-blog-template.D_bXGjer_2oiciq.webp" ></p>
+<p>This was a very good starting point. However, I wanted a much simpler look. While I could’ve gone with an existing blog theme,
+e.g. <a href="https://github.com/satnaing/astro-paper?tab=readme-ov-file">AstroPaper</a>, I decided that I want to do the design from scratch.
+I removed pretty much all the code, apart from the actual pages and the bits that were doing the Markdown parsing.
+While searching for inspiration, I stumbled across <a href="https://archive.leerob.io/blog">Lee Robinson’s blog</a>. I really liked the
+minimalistic, yet refined look. When inspecting his blog, I noticed a lot of <code>prose</code> classes, which I had never seen before,
+despite using Tailwind a lot over the last few years.
+After some brief research, I found out about the <a href="https://github.com/tailwindlabs/tailwindcss-typography">Tailwind Typography Plugin</a>,
+which adds some default styles to vanilla HTML, a perfect fit for styling my posts written in Markdown.</p>
+<p>Since I mainly want to write about web development, having good-looking code blocks was important to me.
+Astro uses the popular <a href="https://shiki.style/">Shiki syntax highlighter</a>, so tons of predefined themes can be used.
+It’s also possible to change the theme based on whether the user uses dark or light mode, with just a few lines of code.
+You can check out the <a href="https://docs.astro.build/en/guides/syntax-highlighting/#setting-light-and-dark-mode-themes">Astro docs</a> for more information.</p>
+<p>Of course, I chose my favorite theme, OneDark (and its light mode equivalent). To showcase this, I’ve added a code snippet:</p>
+<pre class="astro-code astro-code-themes one-light one-dark-pro" style="background-color:#FAFAFA;--shiki-dark-bg:#282c34;color:#383A42;--shiki-dark:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">export</span><span style="color:#E45649;--shiki-dark:#C678DD"> default</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> defineConfig</span><span style="color:#383A42;--shiki-dark:#ABB2BF">({</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#ABB2BF">  ...</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">  markdown</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    shikiConfig</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">      themes</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">        dark</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#50A14F;--shiki-dark:#98C379"> "one-dark-pro"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">        light</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#50A14F;--shiki-dark:#98C379"> "one-light"</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">      },</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    },</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  },</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">});</span></span></code></pre>
+<p>I also added some quality of life improvements, such as Prettier, but I won’t go into detail on those.
+If you are interested in any details, the source code is available on <a href="https://github.com/matthiasweiss/matthiasweiss.at">GitHub</a>.</p> </article> </section> <footer class="flex flex-col items-center gap-4 rounded bg-white p-4 shadow md:flex-row md:gap-8 md:p-6 dark:bg-zinc-800/50"> <img src="/_astro/portrait.DiC_bpC8_2fpgjA.webp" alt="Portrait of Matthias Weiß" width="2641" height="2641" loading="lazy" decoding="async" class="size-32 rounded-full"> <div class="space-y-8"> <p class="prose dark:prose-invert">
+I'm Matthias, a software engineer from Vienna, Austria. If you found
+        this article interesting, you can check out my other posts <a href="/blog">here</a>.
+<br>
+Also, feel free to reach out on
+<a href="https://bsky.app/profile/matthiasweiss.at" target="_blank">Bluesky</a>
+or
+<a href="https://x.com/maziweiss">Twitter</a>, I'd love to hear your
+        thoughts!
+</p> </div> </footer>  </main> </body></html>

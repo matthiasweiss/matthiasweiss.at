@@ -39,7 +39,7 @@ Astro uses the popular [Shiki syntax highlighter](https://shiki.style/), so tons
 It's also possible to change the theme based on whether the user uses dark or light mode, with just a few lines of code.
 You can check out the [Astro docs](https://docs.astro.build/en/guides/syntax-highlighting/#setting-light-and-dark-mode-themes) for more information.
 
-Of course, I use my favorite theme, OneDark (and its light mode equivalent). To showcase this, I've added a code snippet:
+Of course, I chose my favorite theme, OneDark (and its light mode equivalent). To showcase this, I've added a code snippet:
 
 ```ts
 export default defineConfig({

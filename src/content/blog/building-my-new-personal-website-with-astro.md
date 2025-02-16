@@ -24,10 +24,12 @@ but after creating the project with the "use blog template" flag, I was basicall
 
 ![Screenshot of the working blog after the installation](./assets/01_astro-blog-template.png)
 
-This was a very good starting point. However, I wanted a much simpler look.
+This was a very good starting point. However, I wanted a much simpler look. While I could've gone with an existing blog theme,
+e.g. [AstroPaper](https://github.com/satnaing/astro-paper?tab=readme-ov-file), I decided that I want to do the design from scratch.
 I removed pretty much all the code, apart from the actual pages and the bits that were doing the Markdown parsing.
-While searching for inspiration, I stumbled across [Lee Robinson's blog](https://archive.leerob.io/blog). When
-inspecting his blog, I noticed a lot of `prose` classes, which I had never seen before on websites using Tailwind.
+While searching for inspiration, I stumbled across [Lee Robinson's blog](https://archive.leerob.io/blog). I really liked the
+minimalistic, yet refined look. When inspecting his blog, I noticed a lot of `prose` classes, which I had never seen before,
+despite using Tailwind a lot over the last few years.
 After some brief research, I found out about the [Tailwind Typography Plugin](https://github.com/tailwindlabs/tailwindcss-typography),
 which adds some default styles to vanilla HTML, a perfect fit for styling my posts written in Markdown.
 

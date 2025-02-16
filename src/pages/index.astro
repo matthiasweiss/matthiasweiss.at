@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Bali from "../assets/bali.jpg";
+import Portrait from "../assets/portrait.jpg";
+import { PATHS } from "../utils";
+---
+
+<Layout
+  title="Matthias Weiß"
+  description="Full stack developer from Vienna, Austria."
+>
+  <section class="space-y-8">
+    <h1 class="text-2xl">Hey there, I'm Matthias 👋</h1>
+
+    <div class="grid grid-cols-2 gap-4 md:gap-8">
+      <Image
+        alt="Picture of Matthias Weiß on a scooter"
+        src={Bali}
+        class="rounded"
+      />
+
+      <Image
+        alt="Picture of Matthias Weiß on a mountain"
+        src={Portrait}
+        class="rounded"
+      />
+    </div>
+
+    <p class="prose dark:prose-invert">
+      I'm a software engineer from Vienna, Austria. As a full stack engineer, I
+      like all aspects of building web applications. Whether it's frontend,
+      backend, or infrastructure, I enjoy all parts of the process. I've worked
+      with various programming languages and frameworks over the years, but the
+      one I always come back to is Laravel. Even though I'd prefer to work in a
+      more type-safe language than PHP, I haven't found any stacks where I'm
+      remotely as productive as I am in Laravel. Take a look at some of my
+      recent work <a href={PATHS.WORK}>here</a> or on
+      <a href="https://github.com/matthiasweiss" target="_blank">GitHub</a>. 👨‍💻
+    </p>
+
+    <p class="prose dark:prose-invert">
+      One of these projects is this website. I revamped it in early 2025 to give
+      it a more modern look, and also to use it as an excuse to get into
+      blogging. My goal is to share things that I learn and think are worth
+      sharing with others, all in a digestible format. If you're interested, you
+      can check out my posts <a href="/blog">here</a>. ✏️
+    </p>
+
+    <p class="prose dark:prose-invert">
+      While I don't regularly post on social media, feel free to reach out to me
+      on
+      <a href="https://bsky.app/profile/matthiasweiss.at" target="_blank">
+        Bluesky
+      </a>
+      or
+      <a href="https://x.com/maziweiss" target="_blank"> Twitter</a>. #️⃣
+    </p>
+  </section>
+</Layout>

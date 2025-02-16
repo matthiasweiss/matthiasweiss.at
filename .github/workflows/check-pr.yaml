@@ -1,0 +1,21 @@
+name: Check PR
+
+on:
+  pull_request:
+
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check formatting
+        run: npm run check-formatting
+
+      - name: Build
+        run: npm run build

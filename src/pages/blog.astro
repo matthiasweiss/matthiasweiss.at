@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
+import { formatDate } from "../utils";
 
 const recentPosts = (await getCollection("blog")).sort(
   (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
@@ -15,8 +16,9 @@ const recentPosts = (await getCollection("blog")).sort(
     <h1 class="text-2xl">Blog</h1>
 
     <p class="prose dark:prose-invert">
-      While relaunching this website in early 2025, I decided to include a
-      section for future blog posts. Let's see how this goes! 📝
+      While relaunching this website in early 2025, I decided to get into
+      blogging. My goal is to share useful things that I've learned in a
+      digestible format. Let's see how this goes! 📝
     </p>
 
     <ul class="space-y-8">
@@ -28,7 +30,7 @@ const recentPosts = (await getCollection("blog")).sort(
             </a>
 
             <h4 class="text-zinc-400 dark:text-zinc-500">
-              {post.data.description}
+              {formatDate(post.data.publishedAt)}
             </h4>
           </li>
         ))

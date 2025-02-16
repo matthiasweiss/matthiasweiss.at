@@ -1,7 +1,6 @@
 ---
 title: "Building my new personal website with Astro"
-description: "Lorem ipsum dolor sit amet"
-publishedAt: "February, 10 2025"
+publishedAt: "February, 16 2025"
 ---
 
 ```ts

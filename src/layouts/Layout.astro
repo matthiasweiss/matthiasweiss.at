@@ -56,6 +56,13 @@ const pathname = new URL(Astro.request.url).pathname;
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <script
       defer
       src="https://cloud.umami.is/script.js"
@@ -63,10 +70,10 @@ const pathname = new URL(Astro.request.url).pathname;
   </head>
 
   <body
-    class="flex min-h-screen min-w-screen flex-col items-center bg-zinc-100 font-light text-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"
+    class="flex h-screen w-full flex-col items-center bg-zinc-100 font-light text-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"
   >
     <header
-      class="sticky top-0 flex w-full max-w-2xl justify-between bg-zinc-100 px-4 py-8 pb-8 md:relative md:px-8 md:pt-16 dark:bg-zinc-900"
+      class="sticky top-0 flex w-full max-w-2xl justify-between bg-zinc-100 px-4 py-8 pb-8 md:px-8 md:pt-16 dark:bg-zinc-900"
     >
       <nav class="flex w-full gap-4">
         {

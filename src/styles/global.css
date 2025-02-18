@@ -1,9 +1,8 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-html {
-  --onedark-bg: #282c34;
-  --onelight-bg: #fafafa;
+@theme {
+  --font-sans: "Inter", sans-serif;
 }
 
 pre {

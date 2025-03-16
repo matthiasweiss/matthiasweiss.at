@@ -32,7 +32,9 @@ composer require spatie/laravel-data spatie/laravel-typescript-transformer
 php artisan vendor:publish --provider="Spatie\LaravelTypeScriptTransformer\TypeScriptTransformerServiceProvider"
 ```
 
-I then create a data class for each Inertia view, the example shown in the GIF is
+I then create a data class for each Inertia view. The example shown in the GIF is a screen for a dashboard displaying
+the latest posts of a user and a feed containing the latest posts of people the follow. I will use this example throughout
+this post.
 
 ```php
 <?php
@@ -54,7 +56,7 @@ class DashboardData extends Data
 }
 ```
 
-Within my controller I then create an instance of this data class with the given properties and pass it to the inertia view.
+Within my controller I pass an instance of this data class with the given properties to the Inertia view.
 
 ```php
 <?php
@@ -93,7 +95,7 @@ generated type is `null|FeedData`, which matches the behavior of deferred props.
 ],
 ```
 
-Once this is set up, the `php artisan typescript:transform` can be used to generate type definitions from your data classes.
+Once the data class is ready, the `php artisan typescript:transform` can be used to generate type definitions from your data classes.
 Since I like to write the types to a different path, I usually add a custom script to my `composer.json` file.
 
 ```php
@@ -177,3 +179,7 @@ class HandleInertiaRequests extends Middleware
     }
 }
 ```
+
+At this point the workflow already works. However, it still
+
+TODO: vite plugin, CI/CD

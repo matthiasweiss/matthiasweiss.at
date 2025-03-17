@@ -7,7 +7,7 @@ but that is quite cumbersome and error prone. I’ve landed on a setup that auto
 from Laravel data objects and automatically detects any type errors immediately.</p>
 <p>The GIF below shows an example where a property is renamed in a data class, which immediately causes an error
 in the PHP code, due to the use of named arguments, as well as the TypeScript code, due to the type mismatch.
-(Also, creating this GIF was a bit tricky, since I had to make the font insanely large)</p>
+(BTW, creating this GIF was a huge pain, since I had to make the font insanely large)</p>
 <p><img alt="GIF showing a change in the data object and the resulting errors in the PHP and TypeScript code" width="800" height="426" loading="lazy" decoding="async" src="/_astro/02_type_generation.B0vf_6Fn_GRQqg.webp" ></p>
 <p>So how does this work? The main work is done by two packages:</p>
 <ul>

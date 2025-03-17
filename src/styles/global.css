@@ -9,6 +9,11 @@ pre {
   @apply rounded shadow;
 }
 
+code::before,
+code::after {
+  content: "";
+}
+
 @media (prefers-color-scheme: dark) {
   .astro-code,
   .astro-code span {

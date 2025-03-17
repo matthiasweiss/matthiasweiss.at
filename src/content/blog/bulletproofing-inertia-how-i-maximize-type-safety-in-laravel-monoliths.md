@@ -13,7 +13,7 @@ from Laravel data objects and automatically detects any type errors immediately.
 
 The GIF below shows an example where a property is renamed in a data class, which immediately causes an error
 in the PHP code, due to the use of named arguments, as well as the TypeScript code, due to the type mismatch.
-(Also, creating this GIF was a bit tricky, since I had to make the font insanely large)
+(BTW, creating this GIF was a huge pain, since I had to make the font insanely large)
 
 ![GIF showing a change in the data object and the resulting errors in the PHP and TypeScript code](./assets/02_type_generation.gif)
 

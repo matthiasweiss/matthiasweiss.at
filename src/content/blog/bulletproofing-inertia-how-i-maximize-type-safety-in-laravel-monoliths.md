@@ -1,20 +1,21 @@
 ---
 title: "Bulletproofing Inertia: How I maximize Type Safety in Laravel Monoliths"
-description: ""
-publishedAt: "March 18, 2025"
+description: "Maximize type safety in Laravel  & Inertia with Laravel Data and TypeScript Transformer for seamless backend-to-frontend type generation"
+publishedAt: "March 17, 2025"
 ---
 
 My go-to stack for building web applications is Laravel, Inertia and React. Since I have a solid TypeScript
-background, I'm always trying to improve the type safety and robustness of my projects. However, the type safety
-of Laravel & Inertia is not quite there out of the box. While you could define the types yourself, that not only
-is a huge pain, but also quite error prone. I've landed on a setup that I'm very happy with, and I think it's worth sharing.
+background, I'm always trying to improve the type safety and robustness of my projects. Type safety
+helps catch errors early and can even prevent them completely. However, achieving type safety (at least to the extent
+it is possible with PHP and TypeScript) in Laravel & Inertia is not straightforward. You could define the types yourself,
+but that is quite cumbersome and error prone. I've landed on a setup that automatically generates TypeScript types
+from Laravel data objects and automatically detects any type errors immediately.
 
-In my opinion, the main highlight of this setup is the type safety between the Laravel controllers in the backend
-and the properties of the Inertia pages on the frontend. The GIF below shows an example where a property is
-renamed in a data class, which immediately causes an error in the PHP code, due to the use of named arguments,
-as well as the TypeScript code, due to the type mismatch. (Also, creating this GIF was a huge pain, since I had to make the font on my screen insanely large)
+The GIF below shows an example where a property is renamed in a data class, which immediately causes an error
+in the PHP code, due to the use of named arguments, as well as the TypeScript code, due to the type mismatch.
+(Also, creating this GIF was a bit tricky, since I had to make the font insanely large)
 
-![](./assets/02_type_generation.gif)
+![GIF showing a change in the data object and the resulting errors in the PHP and TypeScript code](./assets/02_type_generation.gif)
 
 So how does this work? The main work is done by two packages:
 
@@ -219,8 +220,9 @@ export default defineConfig({
 ```
 
 Lastly, I add a job to my GitHub Actions workflow, which runs the `composer run transform-types` before building the application.
-While most type errors will be caught during development, assuming that you either run `composer run dev` or `npm run dev`, this
-action acts as an additional safety net, ensuring that the types are up to date and potential type errors are detected during the build.
+While most type errors will be caught during development, assuming that you either run `npm run dev` (or `composer run dev`, which
+will run the `npm` command among others), this action acts as an additional safety net, ensuring that the types are up to date
+and potential type errors are detected during the build.
 
 ```yml
 ...

@@ -218,6 +218,28 @@ export default defineConfig({
 });
 ```
 
+**Update on March 18, 2025**
+
+I was looking into extracting an npm package for the vite plugin, but I found
+[`vite-plugin-watch`](https://www.npmjs.com/package/vite-plugin-watch), which basically does the same thing
+as my vite plugin and, from the looks of it, the creator had the exact same use case as me. Using the plugin is straightforward,
+which means I'll probably use it from here on out.
+
+```ts
+import { watch } from 'vite-plugin-watch';
+
+export default defineConfig({
+    ...
+    plugins: [
+        ...
+        watch({
+            pattern: 'app/{Data,Enums}/**/*.php',
+            command: 'composer run transform-types',
+        }),
+    ],
+});
+```
+
 Lastly, I add a job to my GitHub Actions workflow, which runs the `composer run transform-types` before building the application.
 While most type errors will be caught during development, assuming that you either run `npm run dev` (or `composer run dev`, which
 will run the `npm` command among others), this action acts as an additional safety net, ensuring that the types are up to date

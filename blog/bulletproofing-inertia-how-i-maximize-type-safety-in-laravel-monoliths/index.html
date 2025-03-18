@@ -173,6 +173,23 @@ The plugin watches the <code>app/Data</code> directory for changes and runs the 
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    },</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">  ],</span></span>
 <span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">});</span></span></code></pre>
+<p><strong>Update on March 18, 2025</strong></p>
+<p>I was looking into extracting an npm package for the vite plugin, but I found
+<a href="https://www.npmjs.com/package/vite-plugin-watch"><code>vite-plugin-watch</code></a>, which basically does the same thing
+as my vite plugin and, from the looks of it, the creator had the exact same use case as me. Using the plugin is straightforward,
+which means I’ll probably use it from here on out.</p>
+<pre class="astro-code astro-code-themes one-light one-dark-pro" style="background-color:#FAFAFA;--shiki-dark-bg:#282c34;color:#383A42;--shiki-dark:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">import</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> { </span><span style="color:#E45649;--shiki-dark:#E06C75">watch</span><span style="color:#383A42;--shiki-dark:#ABB2BF"> } </span><span style="color:#A626A4;--shiki-dark:#C678DD">from</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'vite-plugin-watch'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A626A4;--shiki-dark:#C678DD">export</span><span style="color:#E45649;--shiki-dark:#C678DD"> default</span><span style="color:#4078F2;--shiki-dark:#61AFEF"> defineConfig</span><span style="color:#383A42;--shiki-dark:#ABB2BF">({</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#ABB2BF">    ...</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">    plugins</span><span style="color:#383A42;--shiki-dark:#ABB2BF">: [</span></span>
+<span class="line"><span style="color:#0184BC;--shiki-dark:#ABB2BF">        ...</span></span>
+<span class="line"><span style="color:#4078F2;--shiki-dark:#61AFEF">        watch</span><span style="color:#383A42;--shiki-dark:#ABB2BF">({</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">            pattern</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'app/{Data,Enums}/**/*.php'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#E45649;--shiki-dark:#E06C75">            command</span><span style="color:#0184BC;--shiki-dark:#ABB2BF">:</span><span style="color:#50A14F;--shiki-dark:#98C379"> 'composer run transform-types'</span><span style="color:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">        }),</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">    ],</span></span>
+<span class="line"><span style="color:#383A42;--shiki-dark:#ABB2BF">});</span></span></code></pre>
 <p>Lastly, I add a job to my GitHub Actions workflow, which runs the <code>composer run transform-types</code> before building the application.
 While most type errors will be caught during development, assuming that you either run <code>npm run dev</code> (or <code>composer run dev</code>, which
 will run the <code>npm</code> command among others), this action acts as an additional safety net, ensuring that the types are up to date

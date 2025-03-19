@@ -22,7 +22,7 @@ So how does this work? The main work is done by two packages:
 - [TypeScript Transformer](https://github.com/spatie/laravel-typescript-transformer) transforms these rich data objects into TypeScript types.
 
 Both packages are installed through composer. I recommend publishing the config file of the TypeScript Transformer package, since
-you might need to comment out the `Spatie\TypeScriptTransformer\Transformers\SpatieEnumTransformer` transformer.
+you might need to comment out the `SpatieEnumTransformer` transformer.
 
 ```sh
 composer require spatie/laravel-data spatie/laravel-typescript-transformer

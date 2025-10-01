@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import ScreenshotSimplechore from "../assets/screenshot-simplechore.png";
+import ScreenshotBreakFree from "../assets/screenshot-breakfree.png";
 import ScreenshotPumpUpNotOut from "../assets/screenshot-pumpupnotout.png";
 ---
 
@@ -27,38 +28,46 @@ import ScreenshotPumpUpNotOut from "../assets/screenshot-pumpupnotout.png";
     </p>
 
     <p class="prose dark:prose-invert">
-      <a href="https://simplechore.xyz/" target="_blank">SimpleChore</a> is an app
-      that makes it easy to schedule your meals for the week. 🍝
+      <a href="https://www.breakfreeapp.net/">Break Free</a> is an iOS app that helps
+      people quit bad habits such as smoking, drinking or gambling. 🙅
       <br />
-      Add your favorite recipes and schedule meals for the upcoming days or weeks.
-      Invite your loved ones to your household so everyone has access to the schedule,
-      and share your favorite recipes with each other. Additionally, you can automatically
-      create customizable shopping lists based on the planned meals and required
-      portion sizes.
+      It is my first ever native app and I built it using React Native and Expo.
+      I
+
+      <Image
+        src={ScreenshotBreakFree}
+        alt="Screenshot of Break Free, an app that helps people quit their bad habits"
+      />
+    </p>
+
+    <p class="prose dark:prose-invert">
+      <span class="italic">SimpleChore</span> was an app that made it easy to schedule
+      your meals and grocery shopping trips for the week. 🍝
       <br />
       The stack I used to implement SimpleChore is Laravel and React, connected through
-      Inertia. The frontend heavily uses Tailwind and shadcn/ui.
+      Inertia. The frontend heavily uses Tailwind and shadcn/ui. I retired it in
+      October of 2025, since it did not have any active users anymore.
     </p>
 
     <Image
       src={ScreenshotSimplechore}
-      alt="Screenshot from SimpleChore, an app that aids in scheduling meals and shopping for groceries."
+      alt="Screenshot of SimpleChore, an app that aided in scheduling meals and shopping for groceries."
     />
 
     <p class="prose dark:prose-invert">
-      <a href="https://pumpupnotout.com/" target="_blank">Pump Up Not Out</a> is
-      an app and browser extension that helps people quit porn in favor of working
-      out. 💪
+      <span class="italic">Pump Up Not Out</span> was an app and browser extension
+      that helps people quit porn in favor of working out. 💪
       <br />
-      It works by redirecting you to the app whenever you try to visit a website
+      It worked by redirecting you to the app whenever you try to visit a website
       with pornographic content. Once redirected, the app motivates you to do a quick
-      set of pushups, pullups or squats. The tech stack is identical to SimpleChore:
-      Laravel, React, Inertia, Tailwind, shadcn/ui.
+      set of pushups, pullups or squats. The tech stack was identical to SimpleChore:
+      Laravel, React, Inertia, Tailwind, shadcn/ui. I also retired it in October
+      of 2025.
     </p>
 
     <Image
       src={ScreenshotPumpUpNotOut}
-      alt="Screenshot from Pump Up Not Out, an app that helps people quit porn and work out instead"
+      alt="Screenshot of Pump Up Not Out, an app that helped people quit porn and work out instead"
     />
 
     <div class="prose space-y-2 dark:prose-invert">
@@ -66,7 +75,7 @@ import ScreenshotPumpUpNotOut from "../assets/screenshot-pumpupnotout.png";
         I've also had the chance to contribute to a few open source projects,
         which I think is a very cool experience. I'd certainly like to do it
         more often, but I try to limit contributions to issues I run into,
-        rather than contributing for the sake of it. My two most rememorable
+        rather than contributing for the sake of it. Some of most memorable
         contributions are the following:
       </p>
 
@@ -81,6 +90,15 @@ import ScreenshotPumpUpNotOut from "../assets/screenshot-pumpupnotout.png";
             target="_blank">Angular blog</a
           >.
         </li>
+
+        <li>
+          Improving the (at the time) new{" "}
+          <a
+            href="https://github.com/laravel/react-starter-kit/pulls?q=is%3Apr+author%3Amatthiasweiss+is%3Aclosed"
+            >Laravel Starter Kits</a
+          >, since it was an exciting day with multiple contributions.
+        </li>
+
         <li>
           Fixing the <a
             href="https://github.com/laravel/breeze/pull/348"

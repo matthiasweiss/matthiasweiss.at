@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
+import DemoNicebucket from "../assets/demo-nicebucket.gif";
 import ScreenshotSimplechore from "../assets/screenshot-simplechore.png";
 import ScreenshotBreakFree from "../assets/screenshot-breakfree.png";
 import ScreenshotPumpUpNotOut from "../assets/screenshot-pumpupnotout.png";
@@ -28,10 +29,31 @@ import ScreenshotPumpUpNotOut from "../assets/screenshot-pumpupnotout.png";
     </p>
 
     <p class="prose dark:prose-invert">
+      <a href="https://github.com/nicebucket-org/nicebucket">nicebucket</a> is a
+      fast, private, and open-source GUI for S3-compatible storages. 🪣
+      <br />
+      I created it with my good friend <a href="https://github.com/itsboogie"
+        >Philip</a
+      > using Tauri and React. Tauri turned out to be a very interesting technology
+      and a good fit for our use case. While the development would have definitely
+      been faster with Electron (since we could have used TypeScript for the backend
+      instead of Rust), I do not regret going with Tauri at all. The app feels snappy,
+      the binary is fairly small, and getting back into Rust was a lot of fun as
+      well.
+
+      <Image
+        src={DemoNicebucket}
+        alt="Screenshot of nicebucket, a fast, private, open-source S3 GUI"
+      />
+    </p>
+
+    <p class="prose dark:prose-invert">
       <a href="https://www.breakfreeapp.net/">Break Free</a> is an iOS app that helps
       people quit bad habits such as smoking, drinking or gambling. 🙅
       <br />
       It is my first ever native app and I built it using React Native and Expo.
+      Being primarily a web developer, this choice turned out to be a great fit for
+      me.
 
       <Image
         src={ScreenshotBreakFree}

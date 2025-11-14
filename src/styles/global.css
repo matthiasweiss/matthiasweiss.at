@@ -21,3 +21,7 @@ code::after {
     background-color: var(--shiki-dark-bg) !important;
   }
 }
+
+img {
+  border-radius: 0.5rem;
+}

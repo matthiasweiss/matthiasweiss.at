@@ -21,14 +21,38 @@ So how does this work? The main work is done by two packages:
 - [Laravel Data](https://github.com/spatie/laravel-data) allows creating rich data objects, which for me replace both form requests and resources.
 - [TypeScript Transformer](https://github.com/spatie/laravel-typescript-transformer) transforms these rich data objects into TypeScript types.
 
-Both packages are installed through composer. I recommend publishing the config file of the TypeScript Transformer package, since
-you might need to comment out the `SpatieEnumTransformer` transformer.
+Both packages are installed through composer. Generating the type definitions in the current state would fail. This is due to the
+`SpatieEnumTransformer`, which requires the `Spatie\Enum\Enum` class from the [Enum](https://github.com/spatie/enum) package.
+Since PHP has introduced native Enums in version 8.1, this package is considered obsolete.
+To fix the issue, I publish the config file of the TypeScript Transformer package, which allows me to
+remove the `SpatieEnumTransformer` transformer from the `transformers` array.
 
 ```sh
 composer require spatie/laravel-data spatie/laravel-typescript-transformer
-
-# Optional
 php artisan vendor:publish --provider="Spatie\LaravelTypeScriptTransformer\TypeScriptTransformerServiceProvider"
+```
+
+**Update on November 21, 2025**
+
+In my most recent project I also replaced the default `TypeDefinitionWriter`, which groups the types according to the structure of their PHP namespaces,
+with the `ModuleWriter`, which lists all types individually without their namespace. This results in the following changes:
+
+```ts
+// Before: TypeDefinitionWriter (default writer)
+declare namespace App.Data {
+  export type DashboardData = {
+    myLatestPosts: Array<App.Data.PostData>;
+    feed: null | App.Data.FeedData;
+  };
+
+  // other type definitions within the namespace ...
+}
+
+// After: ModuleWriter
+export type DashboardData = {
+  name: string;
+  language: Language;
+};
 ```
 
 I then create a data class for each Inertia view, so each `inertia()` (or `Inertia::render()`) receives a complete data object.
@@ -108,17 +132,15 @@ Since I prefer writing the types to a different path, I usually add a custom scr
 },
 ```
 
-This allows me to simply run `composer run transform-types`, instead of adding the `--output js/types/generated.d.ts` flag
-every time. I typically choose this output file, so the generated types are located in the same folder as the default
-types provided by the Laravel starter kit.
-
-The next step is actually using the generated types in our React components. I usually extend the `SharedData` type
+This allows me to run `composer run transform-types`, without the need to add the `--output js/types/generated.ts` flag
+every time. The next step is actually using the generated types in our React components. I usually extend the `SharedData` type
 provided by the Laravel starter kit.
 
 ```tsx
 import { SharedData } from '@/types';
+import { DashboardData } from '@/types/generated';
 
-type DashboardProps = SharedData & App.Data.DashboardData;
+type DashboardProps = SharedData & DashboardData;
 
 export default function Dashboard(props: DashboardProps) {
     ...

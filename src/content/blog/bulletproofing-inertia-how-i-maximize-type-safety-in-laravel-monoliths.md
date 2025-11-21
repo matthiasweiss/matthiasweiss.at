@@ -50,8 +50,8 @@ declare namespace App.Data {
 
 // After: ModuleWriter
 export type DashboardData = {
-  name: string;
-  language: Language;
+  myLatestPosts: Array<PostData>;
+  feed: null | FeedData;
 };
 ```
 

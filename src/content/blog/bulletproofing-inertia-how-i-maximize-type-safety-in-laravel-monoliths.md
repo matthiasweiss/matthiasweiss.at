@@ -1,6 +1,6 @@
 ---
 title: "Bulletproofing Inertia: How I maximize Type Safety in Laravel Monoliths"
-description: "Maximize type safety in Laravel  & Inertia with Laravel Data and TypeScript Transformer for seamless backend-to-frontend type generation"
+description: "Maximize type safety in Laravel & Inertia with Laravel Data and TypeScript Transformer for seamless backend-to-frontend type generation"
 publishedAt: "March 17, 2025"
 ---
 

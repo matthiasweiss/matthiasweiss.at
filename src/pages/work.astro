@@ -2,9 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import DemoNicebucket from "../assets/demo-nicebucket.gif";
-import ScreenshotSimplechore from "../assets/screenshot-simplechore.png";
-import ScreenshotBreakFree from "../assets/screenshot-breakfree.png";
-import ScreenshotPumpUpNotOut from "../assets/screenshot-pumpupnotout.png";
 ---
 
 <Layout title="Projects" description="Description">
@@ -16,8 +13,8 @@ import ScreenshotPumpUpNotOut from "../assets/screenshot-pumpupnotout.png";
         href="https://www.viable.at/"
         target="_blank">viable</a
       >. I get to work with various technologies and frameworks simultaneously,
-      which I really enjoy. Lately, there's been a lot of React, Angular, Spring
-      Boot, and AWS.
+      which I really enjoy. Lately, there's been a lot of React, Spring Boot,
+      Nest and AWS.
       <br />
       Before I joined viable in 2023, I was a frontend developer at
       <a href="https://asqs.net/" target="_blank">ASQS</a>, where I
@@ -48,36 +45,35 @@ import ScreenshotPumpUpNotOut from "../assets/screenshot-pumpupnotout.png";
     </p>
 
     <p class="prose dark:prose-invert">
-      <a href="https://www.breakfreeapp.net/">Break Free</a> is an iOS app that helps
-      people quit bad habits such as smoking, drinking or gambling. 🙅
+      <span class="italic">neurofeed</span> was an iOS app that used AI to generate
+      interactive learning feeds. Imagine Instagram reels but with your own content.
       <br />
-      It is my first ever native app and I built it using React Native and Expo.
-      Being primarily a web developer, this choice turned out to be a great fit for
-      me.
+      It was built using React Native and Expo. However, this time I got so fed up
+      with Apple's publishing process, that I probably won't ever do a native app
+      again.
+    </p>
 
-      <Image
-        src={ScreenshotBreakFree}
-        alt="Screenshot of Break Free, an app that helps people quit their bad habits"
-      />
+    <p class="prose dark:prose-invert">
+      <span class="italic">Break Free</span> was an iOS app that helped people quit
+      bad habits such as smoking, drinking or gambling.
+      <br />
+      It is my first ever native app and I also built it using React Native and Expo.
+      It was a lot of fun coding together a native app for the first time. Especially,
+      considering this was pre AI coding agents.
     </p>
 
     <p class="prose dark:prose-invert">
       <span class="italic">SimpleChore</span> was an app that made it easy to schedule
-      your meals and grocery shopping trips for the week. 🍝
+      your meals and grocery shopping trips for the week.
       <br />
       The stack I used to implement SimpleChore is Laravel and React, connected through
-      Inertia. The frontend heavily uses Tailwind and shadcn/ui. I retired it in
-      October of 2025, since it did not have any active users anymore.
+      Inertia. I retired it in October of 2025, since it did not have any active
+      users anymore.
     </p>
-
-    <Image
-      src={ScreenshotSimplechore}
-      alt="Screenshot of SimpleChore, an app that aided in scheduling meals and shopping for groceries."
-    />
 
     <p class="prose dark:prose-invert">
       <span class="italic">Pump Up Not Out</span> was an app and browser extension
-      that helps people quit porn in favor of working out. 💪
+      that helps people quit porn in favor of working out.
       <br />
       It worked by redirecting you to the app whenever you try to visit a website
       with pornographic content. Once redirected, the app motivates you to do a quick
@@ -85,11 +81,6 @@ import ScreenshotPumpUpNotOut from "../assets/screenshot-pumpupnotout.png";
       Laravel, React, Inertia, Tailwind, shadcn/ui. I also retired it in October
       of 2025.
     </p>
-
-    <Image
-      src={ScreenshotPumpUpNotOut}
-      alt="Screenshot of Pump Up Not Out, an app that helped people quit porn and work out instead"
-    />
 
     <div class="prose space-y-2 dark:prose-invert">
       <p>
